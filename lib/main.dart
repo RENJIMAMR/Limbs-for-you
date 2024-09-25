@@ -20,13 +20,13 @@ import 'ui/widgets/setup_dependencies.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
+    // DeviceOrientation.portraitUp,
+    // DeviceOrientation.portraitDown,
   ]);
 
   if (!kIsWeb) {
     if (Platform.isAndroid) {
-      DeviceOrientation.portraitUp;
+      // DeviceOrientation.portraitUp;
       // ByteData data = await PlatformAssetBundle().load(
       //   Assets.ca.letsEncryptR3,
       // );
