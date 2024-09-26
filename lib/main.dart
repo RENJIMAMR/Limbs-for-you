@@ -20,8 +20,8 @@ import 'ui/widgets/setup_dependencies.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
-    // DeviceOrientation.portraitUp,
-    // DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
   ]);
 
   if (!kIsWeb) {
