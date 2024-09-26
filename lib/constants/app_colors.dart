@@ -5,6 +5,16 @@ import 'package:flutter/material.dart';
 abstract class Palette {
   static const Color primary = Color(0xffFCE900);
   static const Color scaffoldBackgroundColor = Color(0xff317773);
+  static Color whiteMain = Colors.white;
+  static Color blackMain = Colors.black;
+  static Color greyMain = Colors.grey;
+  static Color blueMain = const Color.fromARGB(255, 7, 50, 77);
+  static Color redMain = Colors.red;
+  static Color themeClr = const Color.fromARGB(255, 33, 104, 84);
+  static Color blueShadow = Color.fromARGB(125, 0, 0, 255);
+  static Color fontColor = const Color.fromARGB(255, 117, 80, 230);
+
+  static var greyShade1;
 }
 
 MaterialColor generateMaterialColor(Color color) {

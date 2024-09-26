@@ -8,7 +8,6 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:statusbarz/statusbarz.dart';
 
-import 'app/app.router.dart';
 import 'constants/app_colors.dart';
 import 'constants/app_strings.dart';
 import 'constants/assets.gen.dart';

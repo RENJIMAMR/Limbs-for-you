@@ -1,3 +1,6 @@
+import 'package:carify_clone_two/constants/app_colors.dart';
+import 'package:carify_clone_two/ui/screens/home/tabs/lower_body.dart';
+import 'package:carify_clone_two/ui/screens/home/tabs/upper_body.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -14,28 +17,107 @@ class HomeView extends StatelessWidget {
       // onModelReady: (model) => model.startTimer(),
       builder: (context, model, child) {
         return Scaffold(
-            appBar: AppBar(
-              title: Text(
-                "Welcome ${model.username}",
-                style: TextStyle(fontSize: 30),
+          backgroundColor: Colors.transparent,
+          body: Container(
+            height: MediaQuery.sizeOf(context).height,
+            width: MediaQuery.sizeOf(context).width,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: Assets.images.backgroundImageLFY
+                    .image(fit: BoxFit.cover)
+                    .image,
+                fit: BoxFit.cover,
               ),
-              actions: [
-                IconButton(
-                    onPressed: () {
-                      model.logou();
-                    },
-                    icon: Icon(Icons.power_settings_new_outlined))
-              ],
             ),
-            body: Column(
-              children: [
-                SizedBox(
-                  height: 50,
+            child: Padding(
+              padding: const EdgeInsets.all(13),
+              child: DefaultTabController(
+                length: 2,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Choose Your Prosthesis ',
+                            style: TextStyle(
+                              shadows: [
+                                Shadow(
+                                  offset: Offset(
+                                      3.0, 3.0), // Position of the shadow
+                                  blurRadius: 8.0, // Softness of the shadow
+                                  color:
+                                      const Color.fromARGB(255, 200, 239, 249)
+                                          .withOpacity(0.5), // Shadow color
+                                ),
+                              ],
+                              fontSize: 27,
+                              fontWeight: FontWeight.bold,
+                              color: Palette.whiteMain,
+                            ),
+                          ),
+                          Spacer(),
+                          Icon(
+                            Icons.qr_code_scanner_outlined,
+                            color: Palette.whiteMain,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    TabBar(
+                      indicatorColor: Palette.whiteMain,
+                      unselectedLabelColor: Palette.themeClr.withOpacity(.7),
+                      labelColor: Palette.whiteMain,
+                      dividerColor: Colors.transparent,
+                      labelStyle: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      tabs: [
+                        Tab(
+                          child: Text(
+                            'UPPER BODY',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Text(
+                            'LOWER BODY',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Expanded(
+                      // Wrapping the TabBarView inside an Expanded widget to avoid layout issues
+                      child: TabBarView(
+                        children: [
+                          UpperBody(),
+                          LowerBody(),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ));
+              ),
+            ),
+          ),
+        );
       },
-      viewModelBuilder: () => HomeViewModel(username: username),
+      viewModelBuilder: () => HomeViewModel(),
     );
   }
 }

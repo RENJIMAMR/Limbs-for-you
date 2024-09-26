@@ -45,11 +45,111 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/background_image_LFY.jpg
+  AssetGenImage get backgroundImageLFY =>
+      const AssetGenImage('assets/images/background_image_LFY.jpg');
+
+  /// File path: assets/images/campany3.jpg
+  AssetGenImage get campany3 =>
+      const AssetGenImage('assets/images/campany3.jpg');
+
+  /// File path: assets/images/campany4Ossur.jpg
+  AssetGenImage get campany4Ossur =>
+      const AssetGenImage('assets/images/campany4Ossur.jpg');
+
+  /// File path: assets/images/company1.jpg
+  AssetGenImage get company1 =>
+      const AssetGenImage('assets/images/company1.jpg');
+
+  /// File path: assets/images/company2.jpg
+  AssetGenImage get company2 =>
+      const AssetGenImage('assets/images/company2.jpg');
+
+  /// File path: assets/images/company3assure.jpg
+  AssetGenImage get company3assure =>
+      const AssetGenImage('assets/images/company3assure.jpg');
+
+  /// File path: assets/images/company5.jpg
+  AssetGenImage get company5 =>
+      const AssetGenImage('assets/images/company5.jpg');
+
+  /// File path: assets/images/company6.jpg
+  AssetGenImage get company6 =>
+      const AssetGenImage('assets/images/company6.jpg');
+
+  /// File path: assets/images/company7.jpg
+  AssetGenImage get company7 =>
+      const AssetGenImage('assets/images/company7.jpg');
+
+  /// File path: assets/images/company8.jpg
+  AssetGenImage get company8 =>
+      const AssetGenImage('assets/images/company8.jpg');
+
+  /// File path: assets/images/limb1.jpg
+  AssetGenImage get limb1 => const AssetGenImage('assets/images/limb1.jpg');
+
+  /// File path: assets/images/limbs10.jpg
+  AssetGenImage get limbs10 => const AssetGenImage('assets/images/limbs10.jpg');
+
+  /// File path: assets/images/limbs11.jpg
+  AssetGenImage get limbs11 => const AssetGenImage('assets/images/limbs11.jpg');
+
+  /// File path: assets/images/limbs12.jpg
+  AssetGenImage get limbs12 => const AssetGenImage('assets/images/limbs12.jpg');
+
+  /// File path: assets/images/limbs2.jpg
+  AssetGenImage get limbs2 => const AssetGenImage('assets/images/limbs2.jpg');
+
+  /// File path: assets/images/limbs3.jpg
+  AssetGenImage get limbs3 => const AssetGenImage('assets/images/limbs3.jpg');
+
+  /// File path: assets/images/limbs4.jpg
+  AssetGenImage get limbs4 => const AssetGenImage('assets/images/limbs4.jpg');
+
+  /// File path: assets/images/limbs5.jpg
+  AssetGenImage get limbs5 => const AssetGenImage('assets/images/limbs5.jpg');
+
+  /// File path: assets/images/limbs6.jpg
+  AssetGenImage get limbs6 => const AssetGenImage('assets/images/limbs6.jpg');
+
+  /// File path: assets/images/limbs7.jpg
+  AssetGenImage get limbs7 => const AssetGenImage('assets/images/limbs7.jpg');
+
+  /// File path: assets/images/limbs8.jpg
+  AssetGenImage get limbs8 => const AssetGenImage('assets/images/limbs8.jpg');
+
+  /// File path: assets/images/limbs9.jpg
+  AssetGenImage get limbs9 => const AssetGenImage('assets/images/limbs9.jpg');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [logo];
+  List<AssetGenImage> get values => [
+        backgroundImageLFY,
+        campany3,
+        campany4Ossur,
+        company1,
+        company2,
+        company3assure,
+        company5,
+        company6,
+        company7,
+        company8,
+        limb1,
+        limbs10,
+        limbs11,
+        limbs12,
+        limbs2,
+        limbs3,
+        limbs4,
+        limbs5,
+        limbs6,
+        limbs7,
+        limbs8,
+        limbs9,
+        logo
+      ];
 }
 
 class Assets {

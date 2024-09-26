@@ -1,3 +1,4 @@
+import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -14,7 +15,39 @@ class SplashView extends StatelessWidget {
       onModelReady: (model) => model.startTimer(),
       builder: (context, model, child) {
         return Scaffold(
-          body: Center(child: Assets.images.logo.image(height: 155,width: 155,fit: BoxFit.fill)),
+          body: Container(
+            height: MediaQuery.sizeOf(context).height,
+            width: MediaQuery.sizeOf(context).width,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: Assets.images.limbs4.image().image,
+              ),
+            ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 80,
+                ),
+                Text(
+                  'Limbs For You',
+                  style: TextStyle(
+                      fontSize: 70,
+                      fontWeight: FontWeight.bold,
+                      shadows: <Shadow>[
+                        Shadow(
+                            offset: Offset(10.0, 10.0),
+                            blurRadius: 3.0,
+                            color: Palette.blackMain),
+                        Shadow(
+                            offset: Offset(10.0, 10.0),
+                            blurRadius: 8.0,
+                            color: Palette.blueShadow),
+                      ],
+                      color: Palette.whiteMain),
+                ),
+              ],
+            ),
+          ),
         );
       },
       viewModelBuilder: () => SplashViewModel(),

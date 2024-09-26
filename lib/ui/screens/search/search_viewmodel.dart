@@ -6,8 +6,8 @@ import 'package:stacked/stacked.dart';
 
 import '../../../app/utils.dart';
 
-class HomeViewModel extends BaseViewModel {
-  HomeViewModel();
+class SearchViewmodel extends BaseViewModel {
+  SearchViewmodel();
   // void logout() {
   //   navigationService.pushNamedAndRemoveUntil(Routes.loginView);
   // }
