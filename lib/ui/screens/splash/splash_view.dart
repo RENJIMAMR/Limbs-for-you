@@ -12,7 +12,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<SplashViewModel>.reactive(
-      onModelReady: (model) => model.startTimer(),
+      onViewModelReady: (model) => model.startTimer(),
       builder: (context, model, child) {
         return Scaffold(
           body: Container(
@@ -20,7 +20,7 @@ class SplashView extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: Assets.images.limbs4.image().image,
+                image: Assets.images.limbs4.image(fit: BoxFit.cover).image,
               ),
             ),
             child: Column(

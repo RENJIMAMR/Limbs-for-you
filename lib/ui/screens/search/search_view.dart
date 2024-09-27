@@ -29,56 +29,53 @@ class SearchView extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(13),
-                  child: SingleChildScrollView(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Popular Campanies',
-                                  style: TextStyle(
-                                    shadows: [
-                                      Shadow(
-                                        offset: Offset(
-                                            3.0, 3.0), // Position of the shadow
-                                        blurRadius:
-                                            8.0, // Softness of the shadow
-                                        color: const Color.fromARGB(
-                                                255, 200, 239, 249)
-                                            .withOpacity(0.5), // Shadow color
-                                      ),
-                                    ],
-                                    fontSize: 27,
-                                    fontWeight: FontWeight.bold,
-                                    color: Palette.whiteMain,
-                                  ),
-                                ),
-                                Spacer(),
-                                Icon(
-                                  Icons.search_rounded,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Popular Campanies',
+                                style: TextStyle(
+                                  shadows: [
+                                    Shadow(
+                                      offset: Offset(
+                                          3.0, 3.0), // Position of the shadow
+                                      blurRadius: 8.0, // Softness of the shadow
+                                      color: const Color.fromARGB(
+                                              255, 200, 239, 249)
+                                          .withOpacity(0.5), // Shadow color
+                                    ),
+                                  ],
+                                  fontSize: 27,
+                                  fontWeight: FontWeight.bold,
                                   color: Palette.whiteMain,
                                 ),
-                              ],
-                            ),
+                              ),
+                              Spacer(),
+                              Icon(
+                                Icons.search_rounded,
+                                color: Palette.whiteMain,
+                              ),
+                            ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                        ]),
-                  ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ShortDesContainerCard(),
+                        ShortDesContainerCard(),
+                        ShortDesContainerCard(),
+                        ShortDesContainerCard(),
+                        ShortDesContainerCard(),
+                        ShortDesContainerCard(),
+                        ShortDesContainerCard(),
+                      ]),
                 )));
       },
       viewModelBuilder: () => SearchViewmodel(),

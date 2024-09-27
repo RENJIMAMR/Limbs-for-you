@@ -9,8 +9,10 @@ import '../../tools/screen_size.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({Key? key, required this.username}) : super(key: key);
-  String username;
+  HomeView({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(

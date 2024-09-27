@@ -8,8 +8,8 @@ import '../../tools/screen_size.dart';
 import 'welcome_viewmodel.dart';
 
 class WelcomeView extends StatelessWidget {
-  WelcomeView({Key? key, required this.username}) : super(key: key);
-  String username;
+  WelcomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<WelcomeViewmodel>.reactive(
@@ -72,6 +72,7 @@ class WelcomeView extends StatelessWidget {
                       //     MaterialPageRoute(
                       //       builder: (context) => BottomNavBarScreen(),
                       //     ));
+                      model.navigate();
                     },
                     child: Column(
                       children: [

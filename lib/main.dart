@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:carify_clone_two/app/app.router.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return StatusbarzCapturer(
           child: MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: AppStrings.appName,
             theme: ThemeData(
               primarySwatch: generateMaterialColor(Palette.primary),

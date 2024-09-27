@@ -1,8 +1,7 @@
+import 'package:carify_clone_two/constants/app_colors.dart';
+import 'package:carify_clone_two/ui/widgets/container_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:limbs_for_you/global_widgets/container_card.dart';
-import 'package:limbs_for_you/utils/constants/color_constants.dart';
-import 'package:limbs_for_you/view/dummydb.dart';
 
 class UpperBody extends StatelessWidget {
   const UpperBody({super.key});
@@ -31,7 +30,7 @@ class UpperBody extends StatelessWidget {
                 height: 250,
                 width: 250,
                 decoration: BoxDecoration(
-                  color: ColorConstants.themeClr,
+                  color: Palette.themeClr,
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
@@ -47,7 +46,7 @@ class UpperBody extends StatelessWidget {
           'Popular Companies',
           style: TextStyle(
               fontSize: 25,
-              color: ColorConstants.whiteMain,
+              color: Palette.whiteMain,
               fontWeight: FontWeight.bold),
         ),
         SizedBox(
@@ -55,22 +54,24 @@ class UpperBody extends StatelessWidget {
         ),
         CarouselSlider(
             items: List.generate(
-              Dummydb.CompanyList.length,
+              7,
+              // Dummydb.CompanyList.length,
               (index) => Column(
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage:
-                        AssetImage(Dummydb.CompanyList[index]['image']),
+                    // backgroundImage:
+                    //     AssetImage(Dummydb.CompanyList[index]['image']),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    Dummydb.CompanyList[index]['name'],
+                    '',
+                    // Dummydb.CompanyList[index]['name'],
                     style: TextStyle(
                         fontSize: 15,
-                        color: ColorConstants.whiteMain,
+                        color: Palette.whiteMain,
                         fontWeight: FontWeight.bold),
                   )
                 ],

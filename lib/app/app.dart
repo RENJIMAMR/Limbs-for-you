@@ -15,6 +15,7 @@ import '../ui/screens/splash/splash_view.dart';
     MaterialRoute(page: SplashView, initial: true),
     MaterialRoute(page: WelcomeView),
     MaterialRoute(page: BottomNavBarView),
+    MaterialRoute(page: HomeView),
   ],
   dependencies: [
     LazySingleton(classType: ApiService),
