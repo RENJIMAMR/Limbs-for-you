@@ -8,8 +8,10 @@ import '../../tools/screen_size.dart';
 import 'company_list_viewmodel.dart';
 
 class CompanyListView extends StatelessWidget {
-  CompanyListView({Key? key, required this.username}) : super(key: key);
-  String username;
+  CompanyListView({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<CompanyListViewmodel>.reactive(

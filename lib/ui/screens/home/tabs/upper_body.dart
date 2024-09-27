@@ -1,4 +1,5 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
+import 'package:carify_clone_two/dummydb.dart';
 import 'package:carify_clone_two/ui/widgets/container_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -54,21 +55,20 @@ class UpperBody extends StatelessWidget {
         ),
         CarouselSlider(
             items: List.generate(
-              7,
-              // Dummydb.CompanyList.length,
+              Dummydb.CompanyList.length,
               (index) => Column(
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    // backgroundImage:
-                    //     AssetImage(Dummydb.CompanyList[index]['image']),
+                    backgroundImage: AssetImage(
+                      Dummydb.CompanyList[index].imageUrl,
+                    ),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    '',
-                    // Dummydb.CompanyList[index]['name'],
+                    Dummydb.CompanyList[index].name,
                     style: TextStyle(
                         fontSize: 15,
                         color: Palette.whiteMain,

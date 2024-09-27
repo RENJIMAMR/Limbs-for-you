@@ -8,8 +8,10 @@ import '../../tools/screen_size.dart';
 import 'search_viewmodel.dart';
 
 class SearchView extends StatelessWidget {
-  SearchView({Key? key, required this.username}) : super(key: key);
-  String username;
+  SearchView({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<SearchViewmodel>.reactive(

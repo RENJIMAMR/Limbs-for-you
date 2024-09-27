@@ -49,14 +49,6 @@ class $AssetsImagesGen {
   AssetGenImage get backgroundImageLFY =>
       const AssetGenImage('assets/images/background_image_LFY.jpg');
 
-  /// File path: assets/images/campany3.jpg
-  AssetGenImage get campany3 =>
-      const AssetGenImage('assets/images/campany3.jpg');
-
-  /// File path: assets/images/campany4Ossur.jpg
-  AssetGenImage get campany4Ossur =>
-      const AssetGenImage('assets/images/campany4Ossur.jpg');
-
   /// File path: assets/images/company1.jpg
   AssetGenImage get company1 =>
       const AssetGenImage('assets/images/company1.jpg');
@@ -65,9 +57,17 @@ class $AssetsImagesGen {
   AssetGenImage get company2 =>
       const AssetGenImage('assets/images/company2.jpg');
 
+  /// File path: assets/images/company3.jpg
+  AssetGenImage get company3 =>
+      const AssetGenImage('assets/images/company3.jpg');
+
   /// File path: assets/images/company3assure.jpg
   AssetGenImage get company3assure =>
       const AssetGenImage('assets/images/company3assure.jpg');
+
+  /// File path: assets/images/company4Ossur.jpg
+  AssetGenImage get company4Ossur =>
+      const AssetGenImage('assets/images/company4Ossur.jpg');
 
   /// File path: assets/images/company5.jpg
   AssetGenImage get company5 =>
@@ -127,11 +127,11 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         backgroundImageLFY,
-        campany3,
-        campany4Ossur,
         company1,
         company2,
+        company3,
         company3assure,
+        company4Ossur,
         company5,
         company6,
         company7,
