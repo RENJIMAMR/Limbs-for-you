@@ -1,6 +1,6 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
-import 'package:carify_clone_two/ui/screens/home/tabs/lower_body.dart';
-import 'package:carify_clone_two/ui/screens/home/tabs/upper_body.dart';
+import 'package:carify_clone_two/ui/screens/home/tabs/lower_body_screen/lower_body_view.dart';
+import 'package:carify_clone_two/ui/screens/home/tabs/upperbody_screen/upper_body_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -107,8 +107,8 @@ class HomeView extends StatelessWidget {
                       // Wrapping the TabBarView inside an Expanded widget to avoid layout issues
                       child: TabBarView(
                         children: [
-                          UpperBody(),
-                          LowerBody(),
+                          UpperBodyView(),
+                          LowerBodyView(),
                         ],
                       ),
                     ),

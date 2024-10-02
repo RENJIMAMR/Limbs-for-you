@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 abstract class Palette {
   static const Color primary = Color(0xffFCE900);
+  static const Color transparent = Colors.transparent;
+
   static const Color scaffoldBackgroundColor = Color(0xff317773);
   static Color whiteMain = Colors.white;
   static Color blackMain = Colors.black;
