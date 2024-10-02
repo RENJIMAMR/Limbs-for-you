@@ -22,18 +22,17 @@ class UpperBodyView extends StatelessWidget {
                     onTap: () {
                       viewModel.onNav();
                     },
-                    child: InkWell(
-                      onTap: () {
-                        viewModel.onNav();
-                      },
-                      child: Row(
-                        children: [
-                          ContainerCard(title: 'Knee Joint'),
-                          ContainerCard(title: 'Foot'),
-                          ContainerCard(title: 'Socket'),
-                        ],
+                    child: Row(
+                        children: List.generate(
+                      Dummydb.upperBodyCategory.length,
+                      (index) => InkWell(
+                        onTap: () {
+                          viewModel.onNav();
+                        },
+                        child: ContainerCard(
+                            title: Dummydb.upperBodyCategory[index]),
                       ),
-                    ),
+                    )),
                   ),
                 ),
                 SizedBox(

@@ -1,5 +1,6 @@
 import 'package:carify_clone_two/ui/screens/bottom_nav_bar/bottom_nav_bar_view.dart';
 import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart';
+import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart';
 import 'package:carify_clone_two/ui/screens/home/home_view.dart';
 import 'package:carify_clone_two/ui/screens/home/home_viewmodel.dart';
 import 'package:carify_clone_two/ui/screens/login/login_view.dart';
@@ -22,6 +23,7 @@ import '../ui/screens/splash/splash_view.dart';
     MaterialRoute(page: CompanyListView),
     MaterialRoute(page: SearchView),
     MaterialRoute(page: ProsthesisDetailingScreenView),
+    MaterialRoute(page: FavoriteScreenView),
   ],
   dependencies: [
     LazySingleton(classType: ApiService),

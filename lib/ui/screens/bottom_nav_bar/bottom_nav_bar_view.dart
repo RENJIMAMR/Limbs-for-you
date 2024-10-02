@@ -1,5 +1,6 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart';
+import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart';
 import 'package:carify_clone_two/ui/screens/home/home_view.dart';
 import 'package:carify_clone_two/ui/screens/search/search_view.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
   void initState() {
     super.initState();
     _tabController =
-        TabController(length: 3, vsync: this); // Initialize TabController
+        TabController(length: 4, vsync: this); // Initialize TabController
   }
 
   @override
@@ -46,6 +47,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
               HomeView(),
               CompanyListView(),
               SearchView(),
+              FavoriteScreenView()
             ],
           ),
           bottomNavigationBar: Padding(
@@ -79,6 +81,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView>
                   Tab(icon: Icon(Icons.home), text: "Home"),
                   Tab(icon: Icon(Icons.view_list), text: "Company"),
                   Tab(icon: Icon(Icons.search), text: "Search"),
+                  Tab(icon: Icon(Icons.favorite), text: "Favorites"),
                 ],
               ),
             ),

@@ -19,12 +19,15 @@ class LowerBodyView extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      ContainerCard(title: 'Hand Knee Joint'),
-                      ContainerCard(title: 'Palm'),
-                      ContainerCard(title: 'Hand Fingers'),
-                    ],
-                  ),
+                      children: List.generate(
+                    Dummydb.lowerBodyCategory.length,
+                    (index) => InkWell(
+                        onTap: () {
+                          viewModel.onNav();
+                        },
+                        child: ContainerCard(
+                            title: Dummydb.lowerBodyCategory[index])),
+                  )),
                 ),
                 SizedBox(
                   height: 20,

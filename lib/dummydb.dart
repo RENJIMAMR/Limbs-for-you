@@ -14,4 +14,6 @@ class Dummydb {
     CompanyDetailsModel(
         name: 'ENDOLITE', imageUrl: Assets.images.company8.path),
   ];
+  static List upperBodyCategory = ['Hand Knee Joint', 'Palm', 'Hand Fingers'];
+  static List lowerBodyCategory = ['Knee Joint', 'Foot', 'Socket'];
 }

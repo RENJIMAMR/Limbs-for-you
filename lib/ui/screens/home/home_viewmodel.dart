@@ -10,7 +10,4 @@ import '../../../app/utils.dart';
 
 class HomeViewModel extends BaseViewModel {
   HomeViewModel();
-  // void logout() {
-  //   navigationService.pushNamedAndRemoveUntil(Routes.loginView);
-  // }
 }

@@ -7,4 +7,12 @@ class LowerBodyViewmodel extends BaseViewModel {
   onNav() {
     navigationService.navigateTo(Routes.prosthesisDetailingScreenView);
   }
+
+  int selectedCategoryIndex = 0;
+
+  getCategoryindex(int index) {
+    selectedCategoryIndex = index;
+
+    notifyListeners();
+  }
 }

@@ -14,48 +14,63 @@ class ProsthesisDetailingScreenView extends StatelessWidget {
         viewModelBuilder: () => ProsthesisDetailingScreenViewmodel(),
         builder: (context, viewModel, child) {
           return Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: Text(
-                'All',
-                style: TextStyle(
+              extendBodyBehindAppBar: true,
+              appBar: AppBar(
+                backgroundColor: Palette.transparent,
+                centerTitle: true,
+                leading: Icon(
+                  Icons.arrow_back_ios,
+                  color: Palette.whiteMain,
+                ),
+                title: Text(
+                  'All',
+                  style: TextStyle(
                     shadows: [
-                      Shadow(offset: Offset(0, -8), color: Colors.black)
+                      Shadow(
+                        offset: Offset(3.0, 3.0), // Position of the shadow
+                        blurRadius: 8.0, // Softness of the shadow
+                        color: const Color.fromARGB(255, 200, 239, 249)
+                            .withOpacity(0.5), // Shadow color
+                      ),
                     ],
-                    // textBaseline: TextBaseline.values,
-                    decoration: TextDecoration.underline,
-                    decorationThickness: 4,
-                    color: Palette.transparent,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900),
-              ),
-            ),
-            body: MasonryGridView.builder(
-              itemCount: 5,
-              gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2),
-              itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.all(8),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(25),
-                        child: Image.asset(Assets.images.limbs3.path)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(
-                          Icons.more_horiz,
-                          color: Palette.blackMain,
-                          size: 25,
-                        )
-                      ],
-                    ),
-                  ],
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold,
+                    color: Palette.whiteMain,
+                  ),
                 ),
               ),
-            ),
-          );
+              body: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image:
+                            AssetImage(Assets.images.backgroundImageLFY.path),
+                        fit: BoxFit.cover)),
+                child: MasonryGridView.builder(
+                  itemCount: 5,
+                  gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemBuilder: (context, index) => Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: Image.asset(Assets.images.limbs3.path)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(
+                              Icons.more_horiz,
+                              color: Palette.blackMain,
+                              size: 25,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ));
         });
   }
 }
