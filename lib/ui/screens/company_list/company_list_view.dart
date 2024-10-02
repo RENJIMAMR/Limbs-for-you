@@ -24,7 +24,7 @@ class CompanyListView extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: Assets.images.backgroundImageLFY
+                    image: Assets.images.backgroundImageLFY //background image
                         .image(fit: BoxFit.cover)
                         .image,
                   ),
@@ -72,13 +72,36 @@ class CompanyListView extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
-                          ShortDesContainerCard(),
+                          ShortDesContainerCard(
+                            des:
+                                'Endolite India Ltd, an ISO 9001:2015 company, is a joint venture between the Prime Group and the Blatchford Group and has been established for nearly 25 years. It is a Rehabilitation Services Company focused on Prosthetic & Orthotic services through its Company run clinics and dealers. It has its clinics in all major cities of the Country combined with a network of over 250 franchises. ',
+                            title: 'Endolite',
+                            contact: '04842536055',
+                          ),
+                          ShortDesContainerCard(
+                            title: 'Ottobock',
+                            des:
+                                'Mobility is the key to living life on your own terms – for people in any age group. We have been striving to provide people with disabilities with the best possible quality of life for over 100 years. Valuable feedback regarding our users’ day-to-day experiences helps our product developers see the world through their eyes.',
+                            contact: '',
+                          ),
+                          ShortDesContainerCard(
+                            title: 'Inliven',
+                            des:
+                                'LIFE WITHOUT LIMITATION Centre for Prosthetics & Orthotics Vytilla,Kochi',
+                            contact: '04842334647',
+                          ),
+                          ShortDesContainerCard(
+                            title: 'Hope',
+                            des:
+                                'HOPE is a Prosthetic & Orthotic Rehabilitation Centre, which manufactures artificial limbs, Silicon Fingers, Fracture bracing, Hand splints, Diabetic footwear, Custom Insoles, Customized Knee Belts, Spinal Jacket for back pain etc. HOPE started functioning in Kakkanad, Ernakulam on July 2021. We have our own fabrication unit and Patient Training Facilities in our new center.',
+                            contact: 'tel:07383477565',
+                          ),
+                          ShortDesContainerCard(
+                            title: 'Ossure',
+                            des:
+                                'Össur focuses its efforts and expertise on helping people to be confident, safe and mobile, regardless of injuries or conditions that could compromise their quality of life.',
+                            contact: '',
+                          ),
                         ]),
                   ),
                 )));

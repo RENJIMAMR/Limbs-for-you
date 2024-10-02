@@ -2,8 +2,10 @@ import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ShortDesContainerCard extends StatelessWidget {
-  const ShortDesContainerCard({super.key});
-
+  const ShortDesContainerCard(
+      {super.key, required this.title, required this.des, this.contact});
+  final String title, des;
+  final String? contact;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +18,7 @@ class ShortDesContainerCard extends StatelessWidget {
           borderRadius: BorderRadiusDirectional.circular(18),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             children: [
               Container(
@@ -40,8 +42,8 @@ class ShortDesContainerCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment
                         .spaceBetween, // Distribute space evenly
                     children: [
-                      const Text(
-                        'Title',
+                      Text(
+                        title,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -49,7 +51,7 @@ class ShortDesContainerCard extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          'des sdfghjklkjhcvbnmasdfghjkjhgfhjhgfdsdfghjkjhgfdfghgfghgffhgfghgfgf',
+                          des,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -57,8 +59,8 @@ class ShortDesContainerCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Text(
-                        '₹ Price',
+                      Text(
+                        contact!,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w500),
                       ),

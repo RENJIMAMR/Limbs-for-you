@@ -19,8 +19,10 @@ class WelcomeView extends StatelessWidget {
           body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image:
-                        Assets.images.limbs8.image(fit: BoxFit.cover).image)),
+                    image: AssetImage(
+                      Assets.images.limbs8.path,
+                    ),
+                    fit: BoxFit.cover)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

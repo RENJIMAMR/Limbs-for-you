@@ -43,6 +43,7 @@ dependencies:
   stacked: ^3.4.3 #to build mvvm architecture
   stacked_services: ^1.5.1
   carousel_slider: ^5.0.0
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

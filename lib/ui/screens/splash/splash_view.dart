@@ -20,8 +20,10 @@ class SplashView extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: Assets.images.limbs4.image(fit: BoxFit.cover).image,
-              ),
+                  image: AssetImage(
+                    Assets.images.limbs4.path,
+                  ),
+                  fit: BoxFit.cover),
             ),
             child: Column(
               children: [

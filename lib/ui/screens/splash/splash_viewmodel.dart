@@ -11,10 +11,9 @@ class SplashViewModel extends BaseViewModel {
   void startTimer() async {
     Future.delayed(Duration(seconds: 2)).then(
       (value) {
-        navigationService.navigateTo(Routes.welcomeView);
+        navigationService.pushNamedAndRemoveUntil(Routes.welcomeView);
       },
     );
-    // _timer = Timer(const Duration(seconds: 3), () async {});
   }
 
   @override
