@@ -9,16 +9,20 @@ import 'package:carify_clone_two/ui/screens/bottom_nav_bar/bottom_nav_bar_view.d
     as _i4;
 import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart'
     as _i6;
-import 'package:carify_clone_two/ui/screens/home/home_view.dart' as _i5;
-import 'package:carify_clone_two/ui/screens/prosthesis_detailing_screen/prosthesis_detailing_screen_view.dart'
+import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart'
     as _i8;
+import 'package:carify_clone_two/ui/screens/home/home_view.dart' as _i5;
+import 'package:carify_clone_two/ui/screens/item_detailing_screen/item_detailing_screen_view.dart'
+    as _i10;
+import 'package:carify_clone_two/ui/screens/prosthesis_detailing_screen/prosthesis_detailing_screen_view.dart'
+    as _i9;
 import 'package:carify_clone_two/ui/screens/search/search_view.dart' as _i7;
 import 'package:carify_clone_two/ui/screens/splash/splash_view.dart' as _i2;
 import 'package:carify_clone_two/ui/screens/welcome/welcome_view.dart' as _i3;
-import 'package:flutter/material.dart' as _i9;
+import 'package:flutter/material.dart' as _i11;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i10;
+import 'package:stacked_services/stacked_services.dart' as _i12;
 
 class Routes {
   static const splashView = '/';
@@ -33,8 +37,14 @@ class Routes {
 
   static const searchView = '/search-view';
 
+  static const favoriteScreenView = '/favorite-screen-view';
+
   static const prosthesisDetailingScreenView =
       '/prosthesis-detailing-screen-view';
+
+  static const favoriteScreenView = '/favorite-screen-view';
+
+  static const itemDetailingScreenView = '/item-detailing-screen-view';
 
   static const all = <String>{
     splashView,
@@ -43,7 +53,9 @@ class Routes {
     homeView,
     companyListView,
     searchView,
+    favoriteScreenView,
     prosthesisDetailingScreenView,
+    itemDetailingScreenView,
   };
 }
 
@@ -74,14 +86,26 @@ class StackedRouter extends _i1.RouterBase {
       page: _i7.SearchView,
     ),
     _i1.RouteDef(
+      Routes.favoriteScreenView,
+      page: _i8.FavoriteScreenView,
+    ),
+    _i1.RouteDef(
       Routes.prosthesisDetailingScreenView,
-      page: _i8.ProsthesisDetailingScreenView,
+      page: _i9.ProsthesisDetailingScreenView,
+    ),
+    _i1.RouteDef(
+      Routes.favoriteScreenView,
+      page: _i8.FavoriteScreenView,
+    ),
+    _i1.RouteDef(
+      Routes.itemDetailingScreenView,
+      page: _i10.ItemDetailingScreenView,
     ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
@@ -90,7 +114,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<WelcomeViewArguments>(
         orElse: () => const WelcomeViewArguments(),
       );
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.WelcomeView(key: args.key),
         settings: data,
       );
@@ -99,7 +123,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<BottomNavBarViewArguments>(
         orElse: () => const BottomNavBarViewArguments(),
       );
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i4.BottomNavBarView(key: args.key),
         settings: data,
       );
@@ -108,7 +132,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<HomeViewArguments>(
         orElse: () => const HomeViewArguments(),
       );
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i5.HomeView(key: args.key),
         settings: data,
       );
@@ -117,7 +141,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<CompanyListViewArguments>(
         orElse: () => const CompanyListViewArguments(),
       );
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i6.CompanyListView(key: args.key),
         settings: data,
       );
@@ -126,14 +150,26 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<SearchViewArguments>(
         orElse: () => const SearchViewArguments(),
       );
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i7.SearchView(key: args.key),
         settings: data,
       );
     },
-    _i8.ProsthesisDetailingScreenView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i8.ProsthesisDetailingScreenView(),
+    _i8.FavoriteScreenView: (data) {
+      return _i11.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i8.FavoriteScreenView(),
+        settings: data,
+      );
+    },
+    _i9.ProsthesisDetailingScreenView: (data) {
+      return _i11.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.ProsthesisDetailingScreenView(),
+        settings: data,
+      );
+    },
+    _i10.ItemDetailingScreenView: (data) {
+      return _i11.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i10.ItemDetailingScreenView(),
         settings: data,
       );
     },
@@ -149,7 +185,7 @@ class StackedRouter extends _i1.RouterBase {
 class WelcomeViewArguments {
   const WelcomeViewArguments({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
@@ -171,7 +207,7 @@ class WelcomeViewArguments {
 class BottomNavBarViewArguments {
   const BottomNavBarViewArguments({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
@@ -193,7 +229,7 @@ class BottomNavBarViewArguments {
 class HomeViewArguments {
   const HomeViewArguments({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
@@ -215,7 +251,7 @@ class HomeViewArguments {
 class CompanyListViewArguments {
   const CompanyListViewArguments({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
@@ -237,7 +273,7 @@ class CompanyListViewArguments {
 class SearchViewArguments {
   const SearchViewArguments({this.key});
 
-  final _i9.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
@@ -256,7 +292,7 @@ class SearchViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i10.NavigationService {
+extension NavigatorStateExtension on _i12.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -272,7 +308,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> navigateToWelcomeView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -288,7 +324,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> navigateToBottomNavBarView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -304,7 +340,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> navigateToHomeView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -320,7 +356,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> navigateToCompanyListView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -336,7 +372,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> navigateToSearchView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -351,6 +387,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToFavoriteScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.favoriteScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> navigateToProsthesisDetailingScreenView([
     int? routerId,
     bool preventDuplicates = true,
@@ -359,6 +409,34 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.prosthesisDetailingScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToFavoriteScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.favoriteScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToItemDetailingScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.itemDetailingScreenView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -380,7 +458,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> replaceWithWelcomeView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -396,7 +474,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> replaceWithBottomNavBarView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -412,7 +490,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> replaceWithHomeView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -428,7 +506,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> replaceWithCompanyListView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -444,7 +522,7 @@ extension NavigatorStateExtension on _i10.NavigationService {
   }
 
   Future<dynamic> replaceWithSearchView({
-    _i9.Key? key,
+    _i11.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -459,6 +537,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> replaceWithFavoriteScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.favoriteScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithProsthesisDetailingScreenView([
     int? routerId,
     bool preventDuplicates = true,
@@ -467,6 +559,34 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.prosthesisDetailingScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithFavoriteScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.favoriteScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithItemDetailingScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.itemDetailingScreenView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

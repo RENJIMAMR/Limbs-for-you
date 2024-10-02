@@ -12,30 +12,6 @@ class FavoriteScreenView extends StatelessWidget {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => FavoriteScreenViewModel(),
         builder: (context, viewModel, child) => Scaffold(
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              leading: Icon(
-                Icons.arrow_back_ios,
-                color: Palette.whiteMain,
-              ),
-              title: Text(
-                'My Favourites',
-                style: TextStyle(
-                  shadows: [
-                    Shadow(
-                      offset: Offset(3.0, 3.0), // Position of the shadow
-                      blurRadius: 8.0, // Softness of the shadow
-                      color: const Color.fromARGB(255, 200, 239, 249)
-                          .withOpacity(0.5), // Shadow color
-                    ),
-                  ],
-                  fontSize: 27,
-                  fontWeight: FontWeight.bold,
-                  color: Palette.whiteMain,
-                ),
-              ),
-              backgroundColor: Palette.transparent,
-            ),
             backgroundColor: Colors.transparent,
             body: Container(
               height: MediaQuery.sizeOf(context).height,
@@ -48,23 +24,58 @@ class FavoriteScreenView extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Padding(
-                  padding: const EdgeInsets.all(13),
-                  child: DefaultTabController(
-                      length: 2,
-                      child: GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
-                            mainAxisExtent: 250,
-                            crossAxisCount: 2),
-                        itemCount: 8,
-                        itemBuilder: (context, index) => Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Palette.themeClr),
+              child: Column(children: [
+                SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Text(
+                        'My Favourites',
+                        style: TextStyle(
+                          shadows: [
+                            Shadow(
+                              offset:
+                                  Offset(3.0, 3.0), // Position of the shadow
+                              blurRadius: 8.0, // Softness of the shadow
+                              color: const Color.fromARGB(255, 200, 239, 249)
+                                  .withOpacity(0.5), // Shadow color
+                            ),
+                          ],
+                          fontSize: 27,
+                          fontWeight: FontWeight.bold,
+                          color: Palette.whiteMain,
                         ),
-                      ))),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.favorite,
+                        color: Palette.whiteMain,
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 13),
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          mainAxisExtent: 250,
+                          crossAxisCount: 2),
+                      itemCount: 8,
+                      itemBuilder: (context, index) => Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Palette.themeClr),
+                      ),
+                    ),
+                  ),
+                ),
+              ]),
             )));
   }
 }
