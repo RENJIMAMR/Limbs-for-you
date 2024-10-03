@@ -23,7 +23,6 @@ import '../ui/screens/splash/splash_view.dart';
     MaterialRoute(page: HomeView),
     MaterialRoute(page: CompanyListView),
     MaterialRoute(page: SearchView),
-    MaterialRoute(page: FavoriteScreenView),
     MaterialRoute(page: ProsthesisDetailingScreenView),
     MaterialRoute(page: FavoriteScreenView),
     MaterialRoute(page: ItemDetailingScreenView),
