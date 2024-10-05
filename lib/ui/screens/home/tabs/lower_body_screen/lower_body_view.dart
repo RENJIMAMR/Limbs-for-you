@@ -23,7 +23,7 @@ class LowerBodyView extends StatelessWidget {
                     Dummydb.lowerBodyCategory.length,
                     (index) => InkWell(
                         onTap: () {
-                          viewModel.onNav();
+                          viewModel.onNavToListing();
                         },
                         child: ContainerCard(
                             title: Dummydb.lowerBodyCategory[index])),
@@ -35,12 +35,17 @@ class LowerBodyView extends StatelessWidget {
                 CarouselSlider(
                     items: List.generate(
                       4,
-                      (index) => Container(
-                        height: 250,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          color: Palette.themeClr,
-                          borderRadius: BorderRadius.circular(20),
+                      (index) => InkWell(
+                        onTap: () {
+                          viewModel.onNavToDetailing();
+                        },
+                        child: Container(
+                          height: 250,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            color: Palette.themeClr,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),

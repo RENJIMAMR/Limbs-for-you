@@ -14,7 +14,7 @@ import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view
 import 'package:carify_clone_two/ui/screens/home/home_view.dart' as _i5;
 import 'package:carify_clone_two/ui/screens/item_detailing_screen/item_detailing_screen_view.dart'
     as _i10;
-import 'package:carify_clone_two/ui/screens/prosthesis_detailing_screen/prosthesis_detailing_screen_view.dart'
+import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis_listing_screen_view.dart'
     as _i8;
 import 'package:carify_clone_two/ui/screens/search/search_view.dart' as _i7;
 import 'package:carify_clone_two/ui/screens/splash/splash_view.dart' as _i2;
@@ -37,8 +37,7 @@ class Routes {
 
   static const searchView = '/search-view';
 
-  static const prosthesisDetailingScreenView =
-      '/prosthesis-detailing-screen-view';
+  static const prosthesisListingScreenView = '/prosthesis-listing-screen-view';
 
   static const favoriteScreenView = '/favorite-screen-view';
 
@@ -51,7 +50,7 @@ class Routes {
     homeView,
     companyListView,
     searchView,
-    prosthesisDetailingScreenView,
+    prosthesisListingScreenView,
     favoriteScreenView,
     itemDetailingScreenView,
   };
@@ -84,8 +83,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i7.SearchView,
     ),
     _i1.RouteDef(
-      Routes.prosthesisDetailingScreenView,
-      page: _i8.ProsthesisDetailingScreenView,
+      Routes.prosthesisListingScreenView,
+      page: _i8.ProsthesisListingScreenView,
     ),
     _i1.RouteDef(
       Routes.favoriteScreenView,
@@ -149,9 +148,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i8.ProsthesisDetailingScreenView: (data) {
+    _i8.ProsthesisListingScreenView: (data) {
       return _i11.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i8.ProsthesisDetailingScreenView(),
+        builder: (context) => const _i8.ProsthesisListingScreenView(),
         settings: data,
       );
     },
@@ -381,14 +380,14 @@ extension NavigatorStateExtension on _i12.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToProsthesisDetailingScreenView([
+  Future<dynamic> navigateToProsthesisListingScreenView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.prosthesisDetailingScreenView,
+    return navigateTo<dynamic>(Routes.prosthesisListingScreenView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -517,14 +516,14 @@ extension NavigatorStateExtension on _i12.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithProsthesisDetailingScreenView([
+  Future<dynamic> replaceWithProsthesisListingScreenView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.prosthesisDetailingScreenView,
+    return replaceWith<dynamic>(Routes.prosthesisListingScreenView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

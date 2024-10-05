@@ -57,7 +57,7 @@ class SearchView extends StatelessWidget {
                                     children: [
                                       Text(
                                         textAlign: TextAlign.center,
-                                        'Profile',
+                                        'Company',
                                         maxLines: 2,
                                         style: TextStyle(
                                           fontSize: 17,
@@ -145,12 +145,17 @@ class SearchView extends StatelessWidget {
                             itemCount: 3,
                             itemBuilder: (context, index) => Stack(
                               children: [
-                                Container(
-                                  height: 200,
-                                  width: 110,
-                                  decoration: BoxDecoration(
-                                    color: Palette.blueMain,
-                                    borderRadius: BorderRadius.circular(10),
+                                InkWell(
+                                  onTap: () {
+                                    model.onNavToDetailing();
+                                  },
+                                  child: Container(
+                                    height: 200,
+                                    width: 110,
+                                    decoration: BoxDecoration(
+                                      color: Palette.blueMain,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
                                   ),
                                 ),
                                 Positioned(
@@ -193,18 +198,23 @@ class SearchView extends StatelessWidget {
                         crossAxisSpacing: 8,
                         mainAxisSpacing: 8,
                       ),
-                      itemBuilder: (context, index) => Container(
-                        height: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: Colors.amberAccent,
-                        ),
-                        child: Center(
-                          child: Text(
-                            'title',
-                            style: TextStyle(
-                              color: Palette.whiteMain,
-                              fontWeight: FontWeight.bold,
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () {
+                          model.onNavToDetailing();
+                        },
+                        child: Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.amberAccent,
+                          ),
+                          child: Center(
+                            child: Text(
+                              'title',
+                              style: TextStyle(
+                                color: Palette.whiteMain,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
@@ -224,7 +234,7 @@ class SearchView extends StatelessWidget {
                     SizedBox(height: 10),
                     // Wrapping GridView with SizedBox for a definite height
                     SizedBox(
-                      height: 300,
+                      height: 400,
                       child: GridView.builder(
                         physics: NeverScrollableScrollPhysics(),
                         itemCount: 4,
@@ -233,24 +243,32 @@ class SearchView extends StatelessWidget {
                           crossAxisSpacing: 8,
                           mainAxisSpacing: 8,
                         ),
-                        itemBuilder: (context, index) => Container(
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.amberAccent,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'title',
-                              style: TextStyle(
-                                color: Palette.whiteMain,
-                                fontWeight: FontWeight.bold,
+                        itemBuilder: (context, index) => InkWell(
+                          onTap: () {
+                            model.onNavToDetailing();
+                          },
+                          child: Container(
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.amberAccent,
+                            ),
+                            child: Center(
+                              child: Text(
+                                'title',
+                                style: TextStyle(
+                                  color: Palette.whiteMain,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 70,
+                    )
                   ],
                 ),
               ),

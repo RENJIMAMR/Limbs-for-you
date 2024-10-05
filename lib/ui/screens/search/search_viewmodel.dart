@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:carify_clone_two/app/app.router.dart';
 import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:carify_clone_two/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -26,8 +27,12 @@ class SearchViewmodel extends BaseViewModel {
               color: i == currentpage ? Palette.blackMain : Palette.greyMain,
               shape: BoxShape.circle,
             ),
-          )
+          ),
       ],
     );
+  }
+
+  onNavToDetailing() {
+    navigationService.navigateTo(Routes.itemDetailingScreenView);
   }
 }

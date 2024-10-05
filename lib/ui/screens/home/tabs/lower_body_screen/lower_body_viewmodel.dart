@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class LowerBodyViewmodel extends BaseViewModel {
-  onNav() {
-    navigationService.navigateTo(Routes.prosthesisDetailingScreenView);
+  onNavToDetailing() {
+    navigationService.navigateTo(Routes.itemDetailingScreenView);
   }
 
-  int selectedCategoryIndex = 0;
+  onNavToListing() {
+    navigationService.navigateTo(Routes.prosthesisListingScreenView);
+  }
 
-  getCategoryindex(int index) {
-    selectedCategoryIndex = index;
-
-    notifyListeners();
+  onPop() {
+    navigationService.popUntil(
+      (route) => false,
+    );
   }
 }

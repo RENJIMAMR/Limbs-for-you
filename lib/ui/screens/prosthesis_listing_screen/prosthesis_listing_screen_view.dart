@@ -1,17 +1,17 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:carify_clone_two/constants/assets.gen.dart';
-import 'package:carify_clone_two/ui/screens/prosthesis_detailing_screen/prosthesis_detailing_screen_viewmodel.dart';
+import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis_listing_screen_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:stacked/stacked.dart';
 
-class ProsthesisDetailingScreenView extends StatelessWidget {
-  const ProsthesisDetailingScreenView({super.key});
+class ProsthesisListingScreenView extends StatelessWidget {
+  const ProsthesisListingScreenView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
-        viewModelBuilder: () => ProsthesisDetailingScreenViewmodel(),
+        viewModelBuilder: () => ProsthesisListingingScreenViewmodel(),
         builder: (context, viewModel, child) {
           return Scaffold(
               extendBodyBehindAppBar: true,
@@ -49,24 +49,29 @@ class ProsthesisDetailingScreenView extends StatelessWidget {
                   itemCount: 5,
                   gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),
-                  itemBuilder: (context, index) => Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: Image.asset(Assets.images.limbs3.path)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(
-                              Icons.more_horiz,
-                              color: Palette.blackMain,
-                              size: 25,
-                            )
-                          ],
-                        ),
-                      ],
+                  itemBuilder: (context, index) => InkWell(
+                    onTap: () {
+                      viewModel.onNavToDetailing();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(25),
+                              child: Image.asset(Assets.images.limbs3.path)),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Icon(
+                                Icons.more_horiz,
+                                color: Palette.blackMain,
+                                size: 25,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

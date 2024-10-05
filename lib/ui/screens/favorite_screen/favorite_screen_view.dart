@@ -67,10 +67,15 @@ class FavoriteScreenView extends StatelessWidget {
                           mainAxisExtent: 250,
                           crossAxisCount: 2),
                       itemCount: 8,
-                      itemBuilder: (context, index) => Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Palette.themeClr),
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () {
+                          viewModel.onNavToDetailing();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Palette.themeClr),
+                        ),
                       ),
                     ),
                   ),

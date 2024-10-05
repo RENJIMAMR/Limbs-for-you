@@ -1,7 +1,7 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:carify_clone_two/dummydb.dart';
 import 'package:carify_clone_two/ui/screens/home/tabs/upperbody_screen/upperbody_viewmodel.dart';
-import 'package:carify_clone_two/ui/screens/prosthesis_detailing_screen/prosthesis_detailing_screen_view.dart';
+import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis_listing_screen_view.dart';
 import 'package:carify_clone_two/ui/widgets/container_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -20,14 +20,14 @@ class UpperBodyView extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: InkWell(
                     onTap: () {
-                      viewModel.onNav();
+                      viewModel.onNavToDetailing();
                     },
                     child: Row(
                         children: List.generate(
                       Dummydb.upperBodyCategory.length,
                       (index) => InkWell(
                         onTap: () {
-                          viewModel.onNav();
+                          viewModel.onNavToListing();
                         },
                         child: ContainerCard(
                             title: Dummydb.upperBodyCategory[index]),
@@ -41,12 +41,17 @@ class UpperBodyView extends StatelessWidget {
                 CarouselSlider(
                     items: List.generate(
                       4,
-                      (index) => Container(
-                        height: 250,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          color: Palette.themeClr,
-                          borderRadius: BorderRadius.circular(20),
+                      (index) => InkWell(
+                        onTap: () {
+                          viewModel.onNavToDetailing();
+                        },
+                        child: Container(
+                          height: 250,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            color: Palette.themeClr,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),
