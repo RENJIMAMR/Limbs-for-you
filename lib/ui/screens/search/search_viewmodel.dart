@@ -20,22 +20,26 @@ class SearchViewmodel extends BaseViewModel {
       children: [
         for (int i = 0; i < 5; i++)
           Container(
-            height: i == currentpage ? 12 : 12,
-            width: i == currentpage ? 12 : 12,
+            height: i == currentpage ? 15 : 12,
+            width: i == currentpage ? 15 : 12,
             margin: EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: i == currentpage ? Palette.blackMain : Palette.greyMain,
+              color: i == currentpage
+                  ? Palette.greyMain
+                  : Palette.greyMain.withOpacity(.5),
               shape: BoxShape.circle,
             ),
           ),
       ],
     );
+    notifyListeners();
   }
 
   onNavToDetailing() {
     navigationService.navigateTo(Routes.itemDetailingScreenView);
   }
 
+  onPageChanged({required currentpage}) {}
   onNavToCompanyDetailing() {
     navigationService.navigateTo(Routes.companyDetailingScreenView);
   }

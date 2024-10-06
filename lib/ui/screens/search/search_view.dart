@@ -9,11 +9,17 @@ import '../../../constants/assets.gen.dart';
 import '../../tools/screen_size.dart';
 import 'search_viewmodel.dart';
 
-class SearchView extends StatelessWidget {
-  int currentpage = 0;
+class SearchView extends StatefulWidget {
   SearchView({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<SearchView> createState() => _SearchViewState();
+}
+
+class _SearchViewState extends State<SearchView> {
+  int currentpage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +101,9 @@ class SearchView extends StatelessWidget {
                                 autoPlay: true,
                                 autoPlayInterval: const Duration(seconds: 2),
                                 onPageChanged: (value, _) {
-                                  currentpage = value;
+                                  setState(() { 
+                                    currentpage = value;
+                                  });
                                 }),
                           ),
                         ),
