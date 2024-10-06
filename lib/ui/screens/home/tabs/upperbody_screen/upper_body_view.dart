@@ -77,10 +77,15 @@ class UpperBodyView extends StatelessWidget {
                       Dummydb.CompanyList.length,
                       (index) => Column(
                         children: [
-                          CircleAvatar(
-                            radius: 40,
-                            backgroundImage: AssetImage(
-                              Dummydb.CompanyList[index].imageUrl,
+                          InkWell(
+                            onTap: () {
+                              viewModel.onNavToCompanyDetailing();
+                            },
+                            child: CircleAvatar(
+                              radius: 40,
+                              backgroundImage: AssetImage(
+                                Dummydb.CompanyList[index].imageUrl,
+                              ),
                             ),
                           ),
                           SizedBox(

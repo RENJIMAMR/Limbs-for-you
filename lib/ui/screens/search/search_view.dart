@@ -39,60 +39,65 @@ class SearchView extends StatelessWidget {
                     // Carousel slider
                     Stack(
                       children: [
-                        CarouselSlider(
-                          items: List.generate(
-                            5,
-                            (index) => Container(
-                              width: MediaQuery.sizeOf(context).width,
-                              height: 400,
-                              decoration: BoxDecoration(
-                                color: Palette.blueShadow,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text(
-                                        textAlign: TextAlign.center,
-                                        'Company',
-                                        maxLines: 2,
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          color: Palette.whiteMain,
+                        InkWell(
+                          onTap: () {
+                            model.onNavToCompanyDetailing();
+                          },
+                          child: CarouselSlider(
+                            items: List.generate(
+                              5,
+                              (index) => Container(
+                                width: MediaQuery.sizeOf(context).width,
+                                height: 400,
+                                decoration: BoxDecoration(
+                                  color: Palette.blueShadow,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Text(
+                                          textAlign: TextAlign.center,
+                                          'Company',
+                                          maxLines: 2,
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                            color: Palette.whiteMain,
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        textAlign: TextAlign.center,
-                                        'title',
-                                        maxLines: 4,
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: Palette.whiteMain,
-                                          fontWeight: FontWeight.bold,
+                                        Text(
+                                          textAlign: TextAlign.center,
+                                          'title',
+                                          maxLines: 4,
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: Palette.whiteMain,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
+                            options: CarouselOptions(
+                                aspectRatio: 2,
+                                viewportFraction: 1,
+                                padEnds: false,
+                                enlargeCenterPage: true,
+                                height: 350,
+                                pauseAutoPlayOnTouch: true,
+                                initialPage: 0,
+                                autoPlay: true,
+                                autoPlayInterval: const Duration(seconds: 2),
+                                onPageChanged: (value, _) {
+                                  currentpage = value;
+                                }),
                           ),
-                          options: CarouselOptions(
-                              aspectRatio: 2,
-                              viewportFraction: 1,
-                              padEnds: false,
-                              enlargeCenterPage: true,
-                              height: 350,
-                              pauseAutoPlayOnTouch: true,
-                              initialPage: 0,
-                              autoPlay: true,
-                              autoPlayInterval: const Duration(seconds: 2),
-                              onPageChanged: (value, _) {
-                                currentpage = value;
-                              }),
                         ),
                         SizedBox(height: 30),
                         Padding(

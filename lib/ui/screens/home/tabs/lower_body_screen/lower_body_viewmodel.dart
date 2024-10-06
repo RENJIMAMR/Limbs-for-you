@@ -17,4 +17,8 @@ class LowerBodyViewmodel extends BaseViewModel {
       (route) => false,
     );
   }
+
+  onNavToCompanyDetailing() {
+    navigationService.navigateTo(Routes.companyDetailingScreenView);
+  }
 }

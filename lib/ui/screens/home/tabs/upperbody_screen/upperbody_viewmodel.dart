@@ -18,4 +18,8 @@ class UpperbodyViewmodel extends BaseViewModel {
 
     notifyListeners();
   }
+
+  onNavToCompanyDetailing() {
+    navigationService.navigateTo(Routes.companyDetailingScreenView);
+  }
 }

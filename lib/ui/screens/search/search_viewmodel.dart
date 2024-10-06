@@ -35,4 +35,8 @@ class SearchViewmodel extends BaseViewModel {
   onNavToDetailing() {
     navigationService.navigateTo(Routes.itemDetailingScreenView);
   }
+
+  onNavToCompanyDetailing() {
+    navigationService.navigateTo(Routes.companyDetailingScreenView);
+  }
 }
