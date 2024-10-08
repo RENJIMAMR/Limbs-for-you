@@ -18,9 +18,14 @@ class ProsthesisListingScreenView extends StatelessWidget {
               appBar: AppBar(
                 backgroundColor: Palette.transparent,
                 centerTitle: true,
-                leading: Icon(
-                  Icons.arrow_back_ios,
-                  color: Palette.whiteMain,
+                leading: InkWell(
+                  onTap: () {
+                    viewModel.onPop();
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: Palette.whiteMain,
+                  ),
                 ),
                 title: Text(
                   'All',

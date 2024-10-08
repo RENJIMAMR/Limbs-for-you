@@ -5,8 +5,10 @@ import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view
 import 'package:carify_clone_two/ui/screens/home/home_view.dart';
 
 import 'package:carify_clone_two/ui/screens/item_detailing_screen/item_detailing_screen_view.dart';
+import 'package:carify_clone_two/ui/screens/login/login_view.dart';
 
 import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis_listing_screen_view.dart';
+import 'package:carify_clone_two/ui/screens/registration_screen/registration_screen_view.dart';
 import 'package:carify_clone_two/ui/screens/search/search_view.dart';
 import 'package:carify_clone_two/ui/screens/welcome/welcome_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -20,6 +22,8 @@ import '../ui/screens/splash/splash_view.dart';
   routes: [
     MaterialRoute(page: SplashView, initial: true),
     MaterialRoute(page: WelcomeView),
+    MaterialRoute(page: LoginView),
+    MaterialRoute(page: RegistrationScreenView),
     MaterialRoute(page: BottomNavBarView),
     MaterialRoute(page: HomeView),
     MaterialRoute(page: CompanyListView),

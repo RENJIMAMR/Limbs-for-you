@@ -15,6 +15,7 @@ abstract class Palette {
   static Color themeClr = const Color.fromARGB(255, 33, 104, 84);
   static Color blueShadow = Color.fromARGB(125, 0, 0, 255);
   static Color fontColor = const Color.fromARGB(255, 117, 80, 230);
+  static Color fontBlue = Color(0xff1a75d2);
 
   static var greyShade1;
 }

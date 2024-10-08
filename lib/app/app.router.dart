@@ -6,30 +6,37 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:carify_clone_two/ui/screens/bottom_nav_bar/bottom_nav_bar_view.dart'
-    as _i4;
-import 'package:carify_clone_two/ui/screens/company_detailing_screen/company_detailing_screen_view.dart'
-    as _i11;
-import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart'
     as _i6;
-import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart'
-    as _i9;
-import 'package:carify_clone_two/ui/screens/home/home_view.dart' as _i5;
-import 'package:carify_clone_two/ui/screens/item_detailing_screen/item_detailing_screen_view.dart'
-    as _i10;
-import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis_listing_screen_view.dart'
+import 'package:carify_clone_two/ui/screens/company_detailing_screen/company_detailing_screen_view.dart'
+    as _i13;
+import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart'
     as _i8;
-import 'package:carify_clone_two/ui/screens/search/search_view.dart' as _i7;
+import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart'
+    as _i11;
+import 'package:carify_clone_two/ui/screens/home/home_view.dart' as _i7;
+import 'package:carify_clone_two/ui/screens/item_detailing_screen/item_detailing_screen_view.dart'
+    as _i12;
+import 'package:carify_clone_two/ui/screens/login/login_view.dart' as _i4;
+import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis_listing_screen_view.dart'
+    as _i10;
+import 'package:carify_clone_two/ui/screens/registration_screen/registration_screen_view.dart'
+    as _i5;
+import 'package:carify_clone_two/ui/screens/search/search_view.dart' as _i9;
 import 'package:carify_clone_two/ui/screens/splash/splash_view.dart' as _i2;
 import 'package:carify_clone_two/ui/screens/welcome/welcome_view.dart' as _i3;
-import 'package:flutter/material.dart' as _i12;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i13;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const splashView = '/';
 
   static const welcomeView = '/welcome-view';
+
+  static const loginView = '/login-view';
+
+  static const registrationScreenView = '/registration-screen-view';
 
   static const bottomNavBarView = '/bottom-nav-bar-view';
 
@@ -50,6 +57,8 @@ class Routes {
   static const all = <String>{
     splashView,
     welcomeView,
+    loginView,
+    registrationScreenView,
     bottomNavBarView,
     homeView,
     companyListView,
@@ -72,42 +81,50 @@ class StackedRouter extends _i1.RouterBase {
       page: _i3.WelcomeView,
     ),
     _i1.RouteDef(
+      Routes.loginView,
+      page: _i4.LoginView,
+    ),
+    _i1.RouteDef(
+      Routes.registrationScreenView,
+      page: _i5.RegistrationScreenView,
+    ),
+    _i1.RouteDef(
       Routes.bottomNavBarView,
-      page: _i4.BottomNavBarView,
+      page: _i6.BottomNavBarView,
     ),
     _i1.RouteDef(
       Routes.homeView,
-      page: _i5.HomeView,
+      page: _i7.HomeView,
     ),
     _i1.RouteDef(
       Routes.companyListView,
-      page: _i6.CompanyListView,
+      page: _i8.CompanyListView,
     ),
     _i1.RouteDef(
       Routes.searchView,
-      page: _i7.SearchView,
+      page: _i9.SearchView,
     ),
     _i1.RouteDef(
       Routes.prosthesisListingScreenView,
-      page: _i8.ProsthesisListingScreenView,
+      page: _i10.ProsthesisListingScreenView,
     ),
     _i1.RouteDef(
       Routes.favoriteScreenView,
-      page: _i9.FavoriteScreenView,
+      page: _i11.FavoriteScreenView,
     ),
     _i1.RouteDef(
       Routes.itemDetailingScreenView,
-      page: _i10.ItemDetailingScreenView,
+      page: _i12.ItemDetailingScreenView,
     ),
     _i1.RouteDef(
       Routes.companyDetailingScreenView,
-      page: _i11.CompanyDetailingScreenView,
+      page: _i13.CompanyDetailingScreenView,
     ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
@@ -116,68 +133,80 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<WelcomeViewArguments>(
         orElse: () => const WelcomeViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.WelcomeView(key: args.key),
         settings: data,
       );
     },
-    _i4.BottomNavBarView: (data) {
+    _i4.LoginView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i4.LoginView(),
+        settings: data,
+      );
+    },
+    _i5.RegistrationScreenView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.RegistrationScreenView(),
+        settings: data,
+      );
+    },
+    _i6.BottomNavBarView: (data) {
       final args = data.getArgs<BottomNavBarViewArguments>(
         orElse: () => const BottomNavBarViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => _i4.BottomNavBarView(key: args.key),
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => _i6.BottomNavBarView(key: args.key),
         settings: data,
       );
     },
-    _i5.HomeView: (data) {
+    _i7.HomeView: (data) {
       final args = data.getArgs<HomeViewArguments>(
         orElse: () => const HomeViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => _i5.HomeView(key: args.key),
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => _i7.HomeView(key: args.key),
         settings: data,
       );
     },
-    _i6.CompanyListView: (data) {
+    _i8.CompanyListView: (data) {
       final args = data.getArgs<CompanyListViewArguments>(
         orElse: () => const CompanyListViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => _i6.CompanyListView(key: args.key),
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => _i8.CompanyListView(key: args.key),
         settings: data,
       );
     },
-    _i7.SearchView: (data) {
+    _i9.SearchView: (data) {
       final args = data.getArgs<SearchViewArguments>(
         orElse: () => const SearchViewArguments(),
       );
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => _i7.SearchView(key: args.key),
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => _i9.SearchView(key: args.key),
         settings: data,
       );
     },
-    _i8.ProsthesisListingScreenView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i8.ProsthesisListingScreenView(),
+    _i10.ProsthesisListingScreenView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i10.ProsthesisListingScreenView(),
         settings: data,
       );
     },
-    _i9.FavoriteScreenView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i9.FavoriteScreenView(),
+    _i11.FavoriteScreenView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i11.FavoriteScreenView(),
         settings: data,
       );
     },
-    _i10.ItemDetailingScreenView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i10.ItemDetailingScreenView(),
+    _i12.ItemDetailingScreenView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i12.ItemDetailingScreenView(),
         settings: data,
       );
     },
-    _i11.CompanyDetailingScreenView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i11.CompanyDetailingScreenView(),
+    _i13.CompanyDetailingScreenView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.CompanyDetailingScreenView(),
         settings: data,
       );
     },
@@ -193,7 +222,7 @@ class StackedRouter extends _i1.RouterBase {
 class WelcomeViewArguments {
   const WelcomeViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -215,7 +244,7 @@ class WelcomeViewArguments {
 class BottomNavBarViewArguments {
   const BottomNavBarViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -237,7 +266,7 @@ class BottomNavBarViewArguments {
 class HomeViewArguments {
   const HomeViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -259,7 +288,7 @@ class HomeViewArguments {
 class CompanyListViewArguments {
   const CompanyListViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -281,7 +310,7 @@ class CompanyListViewArguments {
 class SearchViewArguments {
   const SearchViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i14.Key? key;
 
   @override
   String toString() {
@@ -300,7 +329,7 @@ class SearchViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i13.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -316,7 +345,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> navigateToWelcomeView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -331,8 +360,36 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToLoginView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.loginView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToRegistrationScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.registrationScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> navigateToBottomNavBarView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -348,7 +405,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> navigateToHomeView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -364,7 +421,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> navigateToCompanyListView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -380,7 +437,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> navigateToSearchView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -466,7 +523,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> replaceWithWelcomeView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -481,8 +538,36 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> replaceWithLoginView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.loginView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithRegistrationScreenView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.registrationScreenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithBottomNavBarView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -498,7 +583,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> replaceWithHomeView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -514,7 +599,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> replaceWithCompanyListView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -530,7 +615,7 @@ extension NavigatorStateExtension on _i13.NavigationService {
   }
 
   Future<dynamic> replaceWithSearchView({
-    _i12.Key? key,
+    _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,

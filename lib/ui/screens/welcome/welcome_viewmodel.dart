@@ -10,6 +10,6 @@ import '../../../app/utils.dart';
 class WelcomeViewmodel extends BaseViewModel {
   WelcomeViewmodel();
   void navigate() {
-    navigationService.navigateTo(Routes.bottomNavBarView);
+    navigationService.navigateTo(Routes.loginView);
   }
 }

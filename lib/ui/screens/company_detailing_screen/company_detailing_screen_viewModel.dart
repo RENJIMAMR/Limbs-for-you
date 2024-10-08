@@ -8,4 +8,8 @@ class CompanyDetailingScreenViewmodel extends BaseViewModel {
   onNavToCompanyDetailing() {
     navigationService.navigateTo(Routes.companyDetailingScreenView);
   }
+
+  onPop() {
+    navigationService.back();
+  }
 }

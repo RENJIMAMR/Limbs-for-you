@@ -33,9 +33,14 @@ class CompanyDetailingScreenView extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
-                      Icons.arrow_back_ios,
-                      color: Palette.whiteMain,
+                    InkWell(
+                      onTap: () {
+                        viewModel.onPop();
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Palette.whiteMain,
+                      ),
                     ),
                     Text(
                       'Company Name',
