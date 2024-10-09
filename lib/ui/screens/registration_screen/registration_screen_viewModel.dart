@@ -17,7 +17,7 @@ class RegistrationScreenViewmodel extends BaseViewModel {
 
   void login() {
     if (formkey.currentState!.validate()) {
-      navigationService.navigateTo(Routes.loginView);
+      navigationService.pushNamedAndRemoveUntil(Routes.loginView);
     }
   }
 }
