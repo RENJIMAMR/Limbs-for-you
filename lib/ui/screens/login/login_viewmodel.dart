@@ -9,15 +9,9 @@ class LoginViewModel extends BaseViewModel {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   TextEditingController unameController = TextEditingController();
   TextEditingController passController = TextEditingController();
-  // void login() {
-  //   if (formkey.currentState!.validate()) {
-  //     navigationService.navigateTo(Routes.bottomNavBarView);
-  //     //     arguments: HomeViewArguments(username: unameController.text));
-  //   }
-  // }
 
   void signup() {
-    navigationService.pushNamedAndRemoveUntil(Routes.bottomNavBarView);
+    navigationService.pushNamedAndRemoveUntil(Routes.registrationScreenView);
   }
 
   bool isLoading = false;

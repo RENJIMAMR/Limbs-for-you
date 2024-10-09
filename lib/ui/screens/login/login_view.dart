@@ -170,7 +170,9 @@ class LoginView extends StatelessWidget {
                   SizedBox(height: 40),
                   InkWell(
                     onTap: () {
-                      model.onLogin(context: context);
+                      if (model.formkey.currentState!.validate()) {
+                        model.onLogin(context: context);
+                      }
                       // Todo : write code  to navigate to bottom navBar screen on successful Login with registered credentials
                     },
                     child: Container(
