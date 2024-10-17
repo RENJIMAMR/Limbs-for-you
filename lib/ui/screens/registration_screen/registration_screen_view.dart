@@ -64,13 +64,13 @@ class RegistrationScreenView extends StatelessWidget {
                               horizontal: 15, vertical: 10),
                           hintText: "Your Eamil Address",
                           hintStyle: TextStyle(
-                              color: Palette.whiteMain,
+                              color: Palette.blackMain,
                               fontSize: 16,
                               fontWeight: FontWeight.w500),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                color: Palette.whiteMain,
+                                color: Palette.blackMain,
                               )),
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -101,13 +101,13 @@ class RegistrationScreenView extends StatelessWidget {
                                 horizontal: 15, vertical: 10),
                             hintText: "Your Password",
                             hintStyle: TextStyle(
-                                color: Palette.whiteMain,
+                                color: Palette.blackMain,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
-                                  color: Palette.whiteMain,
+                                  color: Palette.blackMain,
                                 )),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -121,7 +121,7 @@ class RegistrationScreenView extends StatelessWidget {
                                 )),
                             suffixIcon: Icon(
                               Icons.visibility_off_rounded,
-                              color: Palette.whiteMain,
+                              color: Palette.blackMain,
                             )),
                       ),
 
@@ -146,7 +146,7 @@ class RegistrationScreenView extends StatelessWidget {
                           child: Text(
                             "Sign Up",
                             style: TextStyle(
-                              color: Palette.whiteMain,
+                              color: Palette.blackMain,
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
@@ -174,7 +174,7 @@ class RegistrationScreenView extends StatelessWidget {
                               child: Text(
                                 "Sign In",
                                 style: TextStyle(
-                                  color: Palette.whiteMain,
+                                  color: Palette.blackMain,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
                                 ),
