@@ -11,7 +11,7 @@ import 'package:carify_clone_two/ui/screens/company_detailing_screen/company_det
     as _i13;
 import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart'
     as _i8;
-import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart'
+import 'package:carify_clone_two/ui/screens/saved_screen/saved_screen_view.dart'
     as _i11;
 import 'package:carify_clone_two/ui/screens/home/home_view.dart' as _i7;
 import 'package:carify_clone_two/ui/screens/item_detailing_screen/item_detailing_screen_view.dart'
@@ -21,7 +21,8 @@ import 'package:carify_clone_two/ui/screens/prosthesis_listing_screen/prosthesis
     as _i10;
 import 'package:carify_clone_two/ui/screens/registration_screen/registration_screen_view.dart'
     as _i5;
-import 'package:carify_clone_two/ui/screens/search/search_view.dart' as _i9;
+import 'package:carify_clone_two/ui/screens/help_screen/help_screen_view.dart'
+    as _i9;
 import 'package:carify_clone_two/ui/screens/splash/splash_view.dart' as _i2;
 import 'package:carify_clone_two/ui/screens/welcome/welcome_view.dart' as _i3;
 import 'package:flutter/material.dart' as _i14;
@@ -102,7 +103,7 @@ class StackedRouter extends _i1.RouterBase {
     ),
     _i1.RouteDef(
       Routes.searchView,
-      page: _i9.SearchView,
+      page: _i9.HelpScreenView,
     ),
     _i1.RouteDef(
       Routes.prosthesisListingScreenView,
@@ -110,7 +111,7 @@ class StackedRouter extends _i1.RouterBase {
     ),
     _i1.RouteDef(
       Routes.favoriteScreenView,
-      page: _i11.FavoriteScreenView,
+      page: _i11.SavedScreenView,
     ),
     _i1.RouteDef(
       Routes.itemDetailingScreenView,
@@ -177,12 +178,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i9.SearchView: (data) {
+    _i9.HelpScreenView: (data) {
       final args = data.getArgs<SearchViewArguments>(
         orElse: () => const SearchViewArguments(),
       );
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i9.SearchView(key: args.key),
+        builder: (context) => _i9.HelpScreenView(key: args.key),
         settings: data,
       );
     },
@@ -192,9 +193,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i11.FavoriteScreenView: (data) {
+    _i11.SavedScreenView: (data) {
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i11.FavoriteScreenView(),
+        builder: (context) => const _i11.SavedScreenView(),
         settings: data,
       );
     },

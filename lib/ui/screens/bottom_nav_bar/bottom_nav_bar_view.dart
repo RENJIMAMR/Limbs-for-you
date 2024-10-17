@@ -1,94 +1,98 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
+import 'package:carify_clone_two/constants/assets.gen.dart';
+import 'package:carify_clone_two/ui/screens/bottom_nav_bar/bottom_nav_bar_viewmodel.dart';
 import 'package:carify_clone_two/ui/screens/company_list/company_list_view.dart';
-import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view.dart';
+import 'package:carify_clone_two/ui/screens/saved_screen/saved_screen_view.dart';
 import 'package:carify_clone_two/ui/screens/home/home_view.dart';
-import 'package:carify_clone_two/ui/screens/search/search_view.dart';
+import 'package:carify_clone_two/ui/screens/help_screen/help_screen_view.dart';
+import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import 'bottom_nav_bar_viewmodel.dart';
-
 class BottomNavBarView extends StatefulWidget {
-  BottomNavBarView({
-    Key? key,
-  }) : super(key: key);
+  const BottomNavBarView({super.key});
 
   @override
   State<BottomNavBarView> createState() => _BottomNavBarViewState();
 }
 
-class _BottomNavBarViewState extends State<BottomNavBarView>
-    with TickerProviderStateMixin {
-  late TabController _tabController;
+class _BottomNavBarViewState extends State<BottomNavBarView> {
+  Widget? _child;
 
   @override
   void initState() {
+    _child = HomeView();
     super.initState();
-    _tabController =
-        TabController(length: 4, vsync: this); // Initialize TabController
   }
 
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+  void _handleNavigationChange(int index) {
+    setState(() {
+      switch (index) {
+        case 0:
+          _child = HomeView();
+          break;
+        case 1:
+          _child = SavedScreenView();
+          break;
+        case 2:
+          _child = CompanyListView();
+          break;
+        case 3:
+          _child = HelpScreenView();
+          break;
+      }
+      _child = AnimatedSwitcher(
+        switchInCurve: Curves.easeOut,
+        switchOutCurve: Curves.easeIn,
+        duration: Duration(milliseconds: 500),
+        child: _child,
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<BottomNavBarViewmodel>.reactive(
-      // onModelReady: (model) => model.startTimer(),
-      builder: (context, model, child) {
-        return Scaffold(
-          backgroundColor: Colors.transparent,
-          body: TabBarView(
-            controller: _tabController,
-            children: [
-              HomeView(),
-              CompanyListView(),
-              SearchView(),
-              FavoriteScreenView()
-            ],
-          ),
-          bottomNavigationBar: Padding(
-            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 15),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(5, 11),
-                    blurRadius: 24,
-                    color: Colors.black.withOpacity(.14),
-                  ),
-                  BoxShadow(
-                    offset: Offset(17, 41),
-                    blurRadius: 44,
-                    color: Colors.black.withOpacity(.12),
-                  ),
-                ],
+    return ViewModelBuilder.reactive(
+        viewModelBuilder: () => BottomNavBarViewmodel(),
+        builder: (context, viewModel, child) {
+          return Scaffold(
+            extendBody: true,
+            body: _child,
+            bottomNavigationBar: FluidNavBar(
+              icons: [
+                FluidNavBarIcon(
+                  svgPath: Assets.images.houseWindow,
+                  extras: {"label": "Home"},
+                  backgroundColor: Palette.whiteMain,
+                ),
+                FluidNavBarIcon(
+                  svgPath: Assets.images.radioButton,
+                  extras: {"label": "Companies"},
+                  backgroundColor: Palette.whiteMain,
+                ),
+                FluidNavBarIcon(
+                  svgPath: Assets.images.bookmark,
+                  extras: {"label": "Saved"},
+                  backgroundColor: Palette.whiteMain,
+                ),
+                FluidNavBarIcon(
+                  svgPath: Assets.images.handsBrain,
+                  extras: {"label": "Help"},
+                  backgroundColor: Palette.whiteMain,
+                ),
+              ],
+              onChange: _handleNavigationChange,
+              style: FluidNavBarStyle(
+                iconSelectedForegroundColor: Palette.blackMain,
               ),
-              child: TabBar(
-                controller: _tabController,
-                indicatorColor: Palette.themeClr,
-                unselectedLabelColor: Palette.greyMain,
-                labelColor: Palette.themeClr,
-                labelStyle:
-                    TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-                dividerColor: Colors.transparent,
-                tabs: [
-                  Tab(icon: Icon(Icons.home), text: "Home"),
-                  Tab(icon: Icon(Icons.view_list), text: "Company"),
-                  Tab(icon: Icon(Icons.search), text: "Search"),
-                  Tab(icon: Icon(Icons.favorite), text: "Favorites"),
-                ],
+              scaleFactor: 1.5,
+              defaultIndex: 1,
+              itemBuilder: (icon, item) => Semantics(
+                label: icon.extras!["label"],
+                child: item,
               ),
             ),
-          ),
-        );
-      },
-      viewModelBuilder: () => BottomNavBarViewmodel(),
-    );
+          );
+        });
   }
 }

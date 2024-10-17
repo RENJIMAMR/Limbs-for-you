@@ -1,16 +1,16 @@
 import 'package:carify_clone_two/constants/app_colors.dart';
 import 'package:carify_clone_two/constants/assets.gen.dart';
-import 'package:carify_clone_two/ui/screens/favorite_screen/favorite_screen_view_model.dart';
+import 'package:carify_clone_two/ui/screens/saved_screen/saved_screen_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class FavoriteScreenView extends StatelessWidget {
-  const FavoriteScreenView({super.key});
+class SavedScreenView extends StatelessWidget {
+  const SavedScreenView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
-        viewModelBuilder: () => FavoriteScreenViewModel(),
+        viewModelBuilder: () => SavedScreenViewModel(),
         builder: (context, viewModel, child) => Scaffold(
             backgroundColor: Colors.transparent,
             body: Container(

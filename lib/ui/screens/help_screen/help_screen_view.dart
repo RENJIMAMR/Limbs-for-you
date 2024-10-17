@@ -7,23 +7,23 @@ import 'package:stacked/stacked.dart';
 
 import '../../../constants/assets.gen.dart';
 import '../../tools/screen_size.dart';
-import 'search_viewmodel.dart';
+import 'help_screen_viewmodel.dart';
 
-class SearchView extends StatefulWidget {
-  SearchView({
+class HelpScreenView extends StatefulWidget {
+  HelpScreenView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<SearchView> createState() => _SearchViewState();
+  State<HelpScreenView> createState() => _HelpScreenViewState();
 }
 
-class _SearchViewState extends State<SearchView> {
+class _HelpScreenViewState extends State<HelpScreenView> {
   int currentpage = 0;
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<SearchViewmodel>.reactive(
+    return ViewModelBuilder<HelpScreenViewmodel>.reactive(
       builder: (context, model, child) {
         return Scaffold(
           backgroundColor: Colors.transparent,
@@ -101,7 +101,7 @@ class _SearchViewState extends State<SearchView> {
                                 autoPlay: true,
                                 autoPlayInterval: const Duration(seconds: 2),
                                 onPageChanged: (value, _) {
-                                  setState(() { 
+                                  setState(() {
                                     currentpage = value;
                                   });
                                 }),
@@ -289,7 +289,7 @@ class _SearchViewState extends State<SearchView> {
           ),
         );
       },
-      viewModelBuilder: () => SearchViewmodel(),
+      viewModelBuilder: () => HelpScreenViewmodel(),
     );
   }
 }

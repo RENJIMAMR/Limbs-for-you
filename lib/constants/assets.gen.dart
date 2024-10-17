@@ -45,9 +45,18 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/apps.svg
+  String get apps => 'assets/images/apps.svg';
+
   /// File path: assets/images/background_image_LFY.jpg
   AssetGenImage get backgroundImageLFY =>
       const AssetGenImage('assets/images/background_image_LFY.jpg');
+
+  /// File path: assets/images/bookmark-slash.svg
+  String get bookmarkSlash => 'assets/images/bookmark-slash.svg';
+
+  /// File path: assets/images/bookmark.svg
+  String get bookmark => 'assets/images/bookmark.svg';
 
   /// File path: assets/images/company1.jpg
   AssetGenImage get company1 =>
@@ -85,6 +94,12 @@ class $AssetsImagesGen {
   AssetGenImage get company8 =>
       const AssetGenImage('assets/images/company8.jpg');
 
+  /// File path: assets/images/hands-brain.svg
+  String get handsBrain => 'assets/images/hands-brain.svg';
+
+  /// File path: assets/images/house-window.svg
+  String get houseWindow => 'assets/images/house-window.svg';
+
   /// File path: assets/images/limbs2.jpg
   AssetGenImage get limbs2 => const AssetGenImage('assets/images/limbs2.jpg');
 
@@ -100,9 +115,27 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/radio-button.svg
+  String get radioButton => 'assets/images/radio-button.svg';
+
+  /// File path: assets/images/search.svg
+  String get search => 'assets/images/search.svg';
+
+  /// File path: assets/images/settings.svg
+  String get settings => 'assets/images/settings.svg';
+
+  /// File path: assets/images/sign-out-alt.svg
+  String get signOutAlt => 'assets/images/sign-out-alt.svg';
+
+  /// File path: assets/images/vision-target.svg
+  String get visionTarget => 'assets/images/vision-target.svg';
+
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
+        apps,
         backgroundImageLFY,
+        bookmarkSlash,
+        bookmark,
         company1,
         company2,
         company3,
@@ -112,11 +145,18 @@ class $AssetsImagesGen {
         company6,
         company7,
         company8,
+        handsBrain,
+        houseWindow,
         limbs2,
         limbs3,
         limbs4,
         limbs8,
-        logo
+        logo,
+        radioButton,
+        search,
+        settings,
+        signOutAlt,
+        visionTarget
       ];
 }
 
